@@ -1,0 +1,49 @@
+.side-menu {
+  width: 250px;
+  background: var(--blue);
+  height: 90vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 30px;
+
+  a {
+    color: var(--grey-400);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+
+    i {
+      margin-right: 15px;
+      color: var(--grey-400);
+    }
+
+    &:hover {
+      color: var(--grey-200);
+    }
+  }
+
+  .links-wrapper, .actions-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .actions-wrapper {
+    ::ng-deep {
+      .p-button.p-button-link {
+        padding: 0;
+        color: var(--grey-400);
+      }
+
+      .p-button .p-button-icon-left {
+        margin-right: 15px;
+      }
+    }
+  }
+}

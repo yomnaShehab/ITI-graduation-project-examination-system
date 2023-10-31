@@ -1,0 +1,50 @@
+<app-layout-container>
+
+  <div class="student-exams">
+    <h2>Exams List</h2>
+    <p-divider></p-divider>
+    <div class="exam" *ngFor="let exam of examsList">
+      <div class="exam-header">
+        <h3 class="exam-title">Exam for course: {{exam.Crs_name}}</h3>
+        <p-tag severity="success" value="COMPLETED" *ngIf="exam.Grade"></p-tag>
+      </div>
+
+      <div class="exam-info">
+        <div class="left">
+          <p class="course-name">
+            <i class="pi pi-calendar"></i>
+            <span>Exam Date</span>
+            {{exam.Exam_date | date: 'dd,MMM,yyyy'}}
+          </p>
+          <p class="exam-grade">
+            <i class="pi pi-info-circle"></i>
+            <span>Exam grade</span>
+            {{exam.Exam_grade}}
+          </p>
+        </div>
+        <div class="right">
+          <p class="exam-duration">
+            <i class="pi pi-clock"></i>
+            <span>Exam duration</span>
+            {{exam.Exam_duration}}
+          </p>
+          <p class="quests-no">
+            <i class="pi pi-question-circle"></i>
+            <span>No. of questions</span>
+            {{exam.No_of_qs}}
+          </p>
+        </div>
+
+      </div>
+      <div class="exam-actions" *ngIf="!exam.Grade">
+        <p-button
+          label="Start Exam"
+          icon="pi pi-play"
+          class="p-button-success"
+          (click)="onViewExam(exam.Exam_id)"
+        ></p-button>
+      </div>
+
+    </div>
+  </div>
+</app-layout-container>

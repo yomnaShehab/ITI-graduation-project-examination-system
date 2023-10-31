@@ -1,0 +1,11 @@
+<div class="app-layout-container">
+  <app-navigation-sidebar></app-navigation-sidebar>
+  <div class="app-layout-container_content">
+    <ng-container *ngIf="!loading">
+      <ng-content></ng-content>
+    </ng-container>
+    <div class="loading" *ngIf="loading">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  </div>
+</div>

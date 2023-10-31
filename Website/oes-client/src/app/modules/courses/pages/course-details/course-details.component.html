@@ -1,0 +1,39 @@
+<app-layout-container [loading]="isLoading">
+  <div class="course-details" *ngIf="courseDetails">
+    <h2 class="course-details_title">{{courseDetails.Crs_name}} Course</h2>
+    <p-divider></p-divider>
+
+    <div class="course-attributes">
+      <div class="attribute-item">
+        <span> <i class="pi pi-clock"></i>Course duration</span>
+        <p>{{courseDetails.Crs_duration}} hr</p>
+      </div>
+      <p-divider></p-divider>
+
+      <div class="attribute-item">
+        <span><i class="pi pi-tag"></i>Course Topic</span>
+        <p>{{courseDetails.Topic_name}}</p>
+      </div>
+      <p-divider></p-divider>
+
+      <div class="attribute-item">
+        <span><i class="pi pi-info-circle"></i>Course grade</span>
+        <p> {{courseDetails.Crs_grade}}</p>
+      </div>
+    </div>
+    <div class="course-instructor">
+      <h4>
+        <i class="pi pi-id-card"></i>
+        Course Instructor</h4>
+      <div class="course-instructor_card">
+        <p-avatar [label]="courseDetails.Ins_name.charAt(0)" styleClass="mr-2" size="xlarge" shape="circle"></p-avatar>
+        <div class="course-instructor_info">
+          <p class="name">{{courseDetails.Ins_name}}</p>
+          <p class="dep">{{courseDetails.Dept_name}}</p>
+        </div>
+        <p class="email">{{courseDetails.Ins_email}}</p>
+      </div>
+    </div>
+  </div>
+</app-layout-container>
+

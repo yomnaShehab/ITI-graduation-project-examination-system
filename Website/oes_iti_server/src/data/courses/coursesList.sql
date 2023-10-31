@@ -1,0 +1,6 @@
+SELECT [Crs_id]
+     ,[Crs_name]
+     ,[Crs_duration]
+     ,[Topic_id ]
+     ,[Ins_id ]
+FROM [dbo].[Course]

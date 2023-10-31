@@ -1,0 +1,35 @@
+.btn {
+  &-default {
+    button {
+      background: #F9A109 !important;
+      border-radius: 12px;
+      color: #fff !important;
+      border: none;
+      padding: 20px;
+      transition: all 0.3s ease-in-out;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      height: 45px;
+      &:hover {
+        background-color: transparent !important;
+        color: var(--orange) !important;
+      }
+    }
+  }
+}
+.p-button {
+  height: 45px !important;
+}
+.p-button.p-button-link {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #34333A !important;
+  text-decoration: none !important;
+}
+button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none !important;
+}

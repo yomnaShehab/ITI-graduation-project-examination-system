@@ -1,0 +1,90 @@
+.course-evaluations {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h2 {
+    color: var(--blue);
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    label {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--blue);
+    }
+
+    ::ng-deep {
+      .p-dropdown {
+        width: 100%;
+      }
+    }
+  }
+
+  .evaluate-form, .factors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .factor-options {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  .factor-option {
+    color: var(--blue);
+    margin-top: 10px;
+    padding: 0 20px;
+  }
+
+  .factor-header {
+    background-color: var(--gray-300);
+    color: var(--dark-red);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  ::ng-deep {
+    .p-error {
+      color: #f44336;
+      font-size: 12px;
+      margin-top: 10px;
+      padding: 0 20px;
+    }
+
+    .p-button {
+      width: 200px;
+      background: var(--blue);
+      border: none;
+    }
+
+    .p-radiobutton .p-radiobutton-box.p-highlight {
+      border-color: var(--Maroon);
+      background: var(--Maroon);
+    }
+
+    .p-radiobutton .p-radiobutton-box:not(.p-disabled):not(.p-highlight):hover {
+      border-color: var(--Maroon);
+    }
+
+    .p-radiobutton .p-radiobutton-box:not(.p-disabled).p-focus {
+      box-shadow: none;
+    }
+  }
+
+  .submit-button {
+    align-self: center;
+    margin-top: 20px;
+  }
+
+}

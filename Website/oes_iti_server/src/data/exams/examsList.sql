@@ -1,0 +1,7 @@
+SELECT [Exam_id]
+     ,[No_of_qs]
+     ,[Exam_duration]
+     ,[Exam_grade]
+     ,[Exam_date]
+     ,[Crs_id]
+FROM [dbo].[Exam]

@@ -1,0 +1,63 @@
+<app-layout-container [loading]="isLoading">
+  <div class="exam-details" *ngIf="examDetails && currentView == 1">
+    <div class="exam-details__header">
+      <p class="exam-date"><span>
+            Exam Date:
+          </span>
+        {{examDetails.Exam_date | date:'dd, MMM, YYYY'}}</p>
+      <div class="exam-timer">
+        <p class="exam-timer__time">{{remainingTime}}</p>
+      </div>
+    </div>
+    <div class="exam-details__info">
+      <div class="flex">
+        <h4><span>Exam No.</span>
+          {{examDetails.Exam_id}}</h4>
+        <h4><span>Course: </span>
+          {{examDetails.Crs_name}}</h4>
+
+      </div>
+      <div class="flex">
+        <h4>
+            <span>
+            Exam Duration:
+          </span>
+          {{examDetails.Exam_duration}}</h4>
+        <h4>
+          <span>No. of questions:</span>
+          {{examDetails.No_of_qs}}</h4>
+      </div>
+
+    </div>
+    <p-divider></p-divider>
+    <form [formGroup]="examFormGroup" class="exam-form" *ngIf="examFormGroup" (ngSubmit)="submit()">
+      <div *ngFor="let question of examDetails.questions; index as index" class="exam-question">
+        <p class="question-header">{{index + 1}} - {{ question.Quest_txt }}</p>
+        <div *ngFor="let choice of question.choices" class="question-choice">
+          <p-radioButton [value]="choice.Choice_txt"
+                         [inputId]="choice.Choice_id + ''"
+                         [formControlName]="'question_' + choice.Quest_id"
+                         [label]="choice.Choice_txt"
+          ></p-radioButton>
+        </div>
+        <p class="p-error"
+           *ngIf="examFormGroup.get('question_' + question.Quest_id)?.invalid && examFormGroup.get('question_' + question.Quest_id)?.touched">
+          Please select an option.
+        </p>
+      </div>
+      <p-button type="submit" label="Submit"
+                class="exam-submit"
+                [disabled]="isLoading || (!examFormGroup.valid && examFormGroup.touched)"
+                [loading]="isLoading"></p-button>
+    </form>
+  </div>
+  <div class="exam-result" *ngIf="currentView == 2 && examResult && examDetails">
+    <h3>
+      Your score is {{examResult.Grade}} out of {{examDetails.Exam_grade}}.
+    </h3>
+    <p-button label="Go to Exams"
+              [routerLink]="['/exams/student', this.userId]"
+              icon="pi pi-arrow-right" iconPos="right"
+              styleClass="p-button-link"></p-button>
+  </div>
+</app-layout-container>

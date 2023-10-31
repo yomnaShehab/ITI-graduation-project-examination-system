@@ -1,0 +1,25 @@
+<div class="login-page">
+  <div class="login-page__content">
+    <div class="login-page__logo">
+      <img src="assets/images/iti-logo.png" alt="logo"/>
+    </div>
+    <h4 class="login-page__title">
+      Welcome to <span class="login-page__title--bold">ITI</span>
+    </h4>
+    <form class="login-page__form" [formGroup]="loginForm">
+      <div class="input-group">
+        <label for="email">Email address</label>
+        <input pInputText id="email" formControlName="email"/>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <p-password [feedback]="false"
+                    [toggleMask]="true"
+                    formControlName="password"
+                    id="password"
+                    class="password-input"></p-password>
+      </div>
+      <p-button type="submit" label="Login" [loading]="false" class="login-btn" (click)="onLogin()"></p-button>
+    </form>
+  </div>
+</div>

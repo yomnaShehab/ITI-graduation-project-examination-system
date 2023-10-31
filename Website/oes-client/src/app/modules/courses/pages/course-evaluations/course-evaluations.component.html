@@ -1,0 +1,47 @@
+<app-layout-container>
+  <div class="course-evaluations">
+    <h2>Courses Evaluations</h2>
+    <p-divider></p-divider>
+    <div class="form-group">
+      <label>
+        Select a course to evaluate
+      </label>
+      <p-dropdown [formControl]="selectedCourseIdControl"
+                  [options]="studentCoursesList"
+                  (onChange)="initEvaluationForm()"
+                  placeholder="Select a course"
+                  optionValue="Crs_id"
+                  optionLabel="Crs_name"></p-dropdown>
+    </div>
+    <form class="evaluate-form"
+          (ngSubmit)="submitEvaluation()"
+          [formGroup]="courseEvaluationForm"
+          *ngIf="courseEvaluationForm && selectedCourseIdControl.value">
+      <div class="form-group evaluation-section">
+        <div *ngFor="let factor of courseEvaluationFactors; index as index"
+             class="factors-list">
+          <p class="factor-header">{{index + 1}} - {{ factor.name }}</p>
+          <div class="factor-options">
+            <div *ngFor="let option of evaluationOptions" class="factor-option">
+              <p-radioButton [value]="option"
+                             [inputId]="option + ''"
+                             [formControlName]="'factor_' + factor.id"
+                             [label]="option + ''"
+              ></p-radioButton>
+            </div>
+          </div>
+          <p class="p-error"
+             *ngIf="courseEvaluationForm.get('factor_' + factor.id)?.invalid
+              && courseEvaluationForm.get('factor_' + factor.id)?.touched">
+            Please select an option.
+          </p>
+        </div>
+      </div>
+      <p-button label="Submit"
+                type="submit"
+                [disabled]="(courseEvaluationForm.invalid && courseEvaluationForm.touched)"
+                [loading]="isLoading"
+                class="submit-button"></p-button>
+    </form>
+  </div>
+</app-layout-container>

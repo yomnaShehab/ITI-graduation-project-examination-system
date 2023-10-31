@@ -1,0 +1,46 @@
+.courses-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  .course-card {
+    width: 350px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--grey-100);
+    background-color: lightgray;
+    cursor: pointer;
+
+    &_topic-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--dark-grey);
+    }
+
+    &_title {
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--blue);
+      margin: 20px 0;
+    }
+
+    ::ng-deep {
+      .p-button.p-button-link {
+        padding: 0;
+        color: var(--Maroon);
+      }
+    }
+  }
+
+  .empty-courses {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark-grey);
+  }
+}

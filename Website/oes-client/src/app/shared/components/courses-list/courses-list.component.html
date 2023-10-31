@@ -1,0 +1,18 @@
+<div class="courses-list">
+  <div class="course-card" *ngFor="let course of courses">
+    <p class="course-card_topic-name">
+      <i class="pi pi-tag"></i>
+      {{course.Topic_name}}
+    </p>
+    <h3 class="course-card_title">
+      {{course.Crs_name}}
+    </h3>
+    <p-button label="View course details"
+              icon="pi pi-arrow-right"
+              iconPos="right"
+              styleClass="p-button-link" [routerLink]="['/courses', course.Crs_id]"></p-button>
+  </div>
+  <h4 *ngIf="courses.length == 0" class="empty-courses">
+    No courses found.
+  </h4>
+</div>

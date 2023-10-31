@@ -1,0 +1,22 @@
+<div class="side-menu">
+  <p-avatar icon="pi pi-user" styleClass="mr-2" size="xlarge"></p-avatar>
+  <div class="links-wrapper">
+    <a [routerLink]="'/home'">
+      <i class="pi pi-book"></i>
+      Home</a>
+    <a [routerLink]="['/exams/student', userId]">
+      <i class="pi pi-file-edit"></i>
+      Exams</a>
+    <a [routerLink]="['/courses/grades']">
+      <i class="pi pi-list"></i>
+      Courses Grades</a>
+    <a [routerLink]="['/courses/evaluate']">
+      <i class="pi pi-comments"></i>
+      Courses Evaluations</a>
+  </div>
+  <div class="actions-wrapper">
+    <p-button label="Logout" icon="pi pi-sign-out"
+              styleClass="p-button-link"
+              (click)="onUserLogout()"></p-button>
+  </div>
+</div>

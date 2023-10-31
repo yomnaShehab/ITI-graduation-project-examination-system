@@ -1,0 +1,16 @@
+<div class="home-page">
+  <app-layout-container>
+    <div class="welcome-banner">
+      Welcome, <span>{{userInfo?.Std_name}}</span>
+    </div>
+    <section class="student-courses" *ngIf="!isLoading">
+      <h2 class="student-courses__title">My Courses</h2>
+      <p-divider></p-divider>
+      <app-courses-list [courses]="coursesList"></app-courses-list>
+    </section>
+    <div class="loading" *ngIf="isLoading">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  </app-layout-container>
+
+</div>
