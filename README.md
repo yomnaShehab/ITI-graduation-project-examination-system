@@ -20,3 +20,6 @@ The project encompasses various components including an ERD, database creation o
 - *Dashboards using Power BI:* Provides details about the Power BI dashboards and the data sources they connect to.
 
 - *Student Portal Website:* Contains the code and files for the front-end interface accessible to students.
+
+## Documentation
+- View the full documentation of the project [here](https://github.com/Mennatullah-Fahmi/ITI-graduation-project-excamination-system/blob/main/Documentation%20%26%20Presentation/Examination%20System%20documentation.pdf).
