@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository contains the source code and documentation for فاث graduation project of ITI: POWER BI Track: Examination System.
+This repository contains the source code and documentation for graduation project of ITI: POWER BI Track: Examination System.
 The project encompasses various components including an ERD, database creation on SQL Server, stored procedures, SSRS reports, Power BI dashboards, and a simple student portal website.
 
 ## Components
